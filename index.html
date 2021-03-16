@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="master.css">
+  <link id="themeLink" rel="stylesheet" href="light-theme.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin Sans" rel="stylesheet">
+  <title>Todo list</title>
+</head>
+
+<body>
+  <div class="header">
+      <span class="logo">TODO</span>
+      <img id="themeButton" onClick="changeTheme()" src="images/icon-moon.svg" alt="Color theme button">
+  </div>
+
+  <div class="listHeader">
+    <span onClick="addTodo()" class="listMarkerNotTicked"></span>
+    <input id="todoInput" type="text" placeholder="Create a new todo...">
+  </div>
+
+  <ul id="todoList">
+    <!--- List items here --->
+
+    <li id="listFooter" style="display: flex; justify-content: space-between;">
+      <span>0 items left</span>
+
+      <section>
+        <span onClick="showAllListItems()" class="listAction">All</span>
+        <span onClick="showActive()" class="listAction">Active</span>
+        <span onClick="showCompleted()" class="listAction">Completed</span>
+      </section>
+
+      <span onClick="clearAll()" class="listAction">Clear all</span>
+    </li>
+  </ul>
+
+
+
+  <script type="text/javascript" src="functional.js"></script>
+  <script type="text/javascript" src="visual.js"></script>
+</body>
+
+</html>

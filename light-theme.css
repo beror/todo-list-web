@@ -1,0 +1,5 @@
+body {
+  background-image: url("images/bg-desktop-light.jpg");
+  background-color: hsl(0, 0%, 98%);
+  background-size: cover;
+}
