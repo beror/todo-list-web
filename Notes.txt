@@ -1,0 +1,1 @@
+1. Removing by cross doesn't remove from the todo array.

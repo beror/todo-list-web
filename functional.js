@@ -7,6 +7,13 @@ class Todo {
 
 var todos = [];
 
+document.getElementById("todoInput")
+.addEventListener("keydown", function(event) {
+  if(event.keyCode === 13) {
+    addTodo();
+  }
+})
+
 function addTodo() {
   let todoList = document.getElementById("todoList");
   let newTodoText = document.getElementById("todoInput").value;
@@ -23,7 +30,7 @@ function addTodo() {
   newListItem.innerHTML = '<span class="listMarkerNotTicked"></span>' + newTodoText;
   todoList.insertBefore(newListItem, todoList.children[todoList.children.length - 1]);
 
-  updateLitsItemCounter();
+  updateListItemCounter();
 }
 
 function deleteTodo(liElement) {
@@ -33,7 +40,7 @@ function deleteTodo(liElement) {
   document.getElementById("todoList").children[itemIndex].remove();
   todos.splice(itemIndex, 1);
 
-  updateLitsItemCounter();
+  updateListItemCounter();
 }
 
 function clearAll() {
@@ -41,13 +48,9 @@ function clearAll() {
   todos = [];
 }
 
-function updateLitsItemCounter() {
+function updateListItemCounter() {
   document.getElementById("todoList")
   .lastElementChild
   .firstElementChild
   .innerText = todos.length + " items left";
-}
-
-function appendChildren(parent, children) {
-  children.forEach((child, i) => parent.appendChild(child));
 }

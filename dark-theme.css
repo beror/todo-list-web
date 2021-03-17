@@ -2,3 +2,27 @@ body {
   background-image: url("images/bg-desktop-dark.jpg");
   background-color: hsl(235, 21%, 11%);
 }
+
+.listHeader {
+  background-color: hsl(234, 38%, 23%);
+}
+
+.listHeader input {
+  background-color: hsl(234, 38%, 23%);
+  color: hsl(234, 39%, 85%);
+}
+
+ul {
+  background: hsl(234, 38%, 23%);
+  color: hsl(234, 39%, 85%);
+}
+
+li {
+  border-color: hsl(234, 11%, 52%);
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    background-image: url("images/bg-mobile-dark.jpg");
+  }
+}

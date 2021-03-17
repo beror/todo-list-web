@@ -7,6 +7,12 @@ body {
   background-repeat: no-repeat;
 }
 
+@media only screen and (min-width: 1400px) {
+  body {
+    background-size: 100% 300px;
+  }
+}
+
 .header {
   margin-left: auto;
   margin-right: auto;
@@ -22,92 +28,6 @@ body {
   user-select: none;
 }
 
-.listHeader {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 12px 10px;
-  width: 520px;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.listHeader input {
-  font-family: 'Josefin Sans', sans-serif;
-  border: 0;
-}
-
-.listHeader input:focus {
-  outline: 0;
-}
-
-ul {
-  margin-left: auto;
-  margin-right: auto;
-  width: 540px; /* listHeader's padding + 20px */
-  text-align: left;
-  padding-left: 0;
-  background-color: white;
-  border-radius: 10px;
-  list-style-type: none;
-}
-
-li {
-  padding: 25px 10px 0 10px;
-  height: 50px;
-  border-bottom: 1px solid black;
-  cursor: pointer;
-}
-
-li:last-child {
-  border: none;
-  font-size: 20px;
-  cursor: auto;
-}
-
-.listMarkerNotTicked {
-  display: inline-block;
-  position: relative;
-  top: 2px;
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
-  border: 1px solid darkgrey;
-  border-radius: 50%;
-}
-
-.listMarkerTicked { /* List marker should be put in a div with fixed width */
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  margin-right: 20px;
-  border-radius: 50%;
-  background-image: url("images/icon-check.svg"),
-  linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.markerBorderHighlight {
-  border: 1px solid red;
-}
-
-.cross {
-  position: relative;
-  top: 5px;
-  cursor: pointer;
-  float: right;
-}
-
-.listAction {
-  cursor: pointer;
-  user-select: none;
-}
-
-.listAction:hover {
-  color: lightblue;
-}
-
 #themeButton {
   float: right;
   cursor: pointer;
@@ -118,18 +38,5 @@ li:last-child {
 @media only screen and (max-width: 570px) {
   .header {
     width: 95%;
-  }
-
-  .listHeader {
-    width: 95%;
-  }
-
-  ul {
-    width: 95%;
-    line-height: 35px;
-  }
-
-  li:last-child {
-    height: 80px;
   }
 }

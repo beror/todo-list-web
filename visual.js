@@ -50,9 +50,8 @@ function showAllListItems() {
   });
 
   removeAllListItemsFromDOM();
-  todosElementized.forEach((todo, i) => {
-    todoList.insertBefore(todo, todoList.lastElementChild);
-  });
+  drawListItems(todosElementized);
+  highlightListAction("All");
 }
 
 function showActive() {
@@ -68,9 +67,8 @@ function showActive() {
     });
 
   removeAllListItemsFromDOM();
-  activeTodosElementized.forEach((activeTodo, i) => {
-    todoList.insertBefore(activeTodo, todoList.lastElementChild);
-  });
+  drawListItems(activeTodosElementized);
+  highlightListAction("Active");
 }
 
 function showCompleted() {
@@ -86,9 +84,8 @@ function showCompleted() {
     });
 
   removeAllListItemsFromDOM();
-  completedTodosElementized.forEach((completedTodo, i) => {
-    todoList.insertBefore(completedTodo, todoList.lastElementChild);
-  });
+  drawListItems(completedTodosElementized);
+  highlightListAction("Completed");
 }
 
 function removeAllListItemsFromDOM() {
@@ -96,6 +93,14 @@ function removeAllListItemsFromDOM() {
   while(todoList.firstElementChild.id !== "listFooter") {
     todoList.firstElementChild.remove();
   }
+}
+
+function drawListItems(liElements) {
+  let todoList = document.getElementById("todoList");
+
+  liElements.forEach((completedTodo, i) => {
+    todoList.insertBefore(completedTodo, todoList.lastElementChild);
+  });
 }
 
 function highlightListItem(liElement) {
@@ -141,4 +146,20 @@ function removeCrossFromListItem(liElement) {
   if(typeof cross !== "undefined") {
     cross.remove();
   }
+}
+
+function highlightListAction(listActionInnerText) {
+  let todoList = document.getElementById("todoList");
+
+  [...todoList
+  .lastElementChild
+  .children[1]
+  .children]
+  .forEach(listAction => {
+    if(listAction.innerText !== listActionInnerText) {
+      listAction.style.color = "";
+    } else {
+      listAction.style.color = "hsl(220, 98%, 61%)";
+    }
+  })
 }
