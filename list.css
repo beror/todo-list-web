@@ -9,17 +9,20 @@
 }
 
 .addButton {
-  text-align: center;
-  display: inline-block;
+  display: inline-flex;
   width: 28px;
   height: 28px;
   margin-right: 20px;
   border-radius: 50%;
-  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  font-size: 24px;
   color: white;
-
+  
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-repeat: no-repeat;
   background-position: center;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .addButton:hover {
