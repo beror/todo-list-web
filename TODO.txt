@@ -1,3 +1,6 @@
+Primary:
+Make todo deletion work on touchscreens
+
 The code:
 Use class toggling
 Get rid of code duplication
