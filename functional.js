@@ -10,13 +10,12 @@ var todos = [];
 document.getElementById("todoInput")
 .addEventListener("keydown", function(event) {
   if(event.keyCode === 13) {
-    addTodo();
+    addTodo(this.value);
   }
 })
 
-function addTodo() {
+function addTodo(newTodoText) {
   let todoList = document.getElementById("todoList");
-  let newTodoText = document.getElementById("todoInput").value;
   let newListItem = document.createElement("LI");
 
   if(newTodoText === "") {
@@ -31,21 +30,27 @@ function addTodo() {
   todoList.insertBefore(newListItem, todoList.children[todoList.children.length - 1]);
 
   updateListItemCounter();
+  document.getElementById("todoInput").value = "";
 }
 
 function deleteTodo(liElement) {
-  let itemIndex = [...liElement.parentNode.children]
+  let todoList = document.getElementById("todoList");
+
+  let itemIndex = [...todoList.children]
   .findIndex(child => child === liElement);
 
   document.getElementById("todoList").children[itemIndex].remove();
   todos.splice(itemIndex, 1);
 
   updateListItemCounter();
+
+  if(event !== undefined) event.stopPropagation();
 }
 
 function clearAll() {
   removeAllListItemsFromDOM();
   todos = [];
+  updateListItemCounter();
 }
 
 function updateListItemCounter() {

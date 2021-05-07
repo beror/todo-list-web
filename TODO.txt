@@ -1,0 +1,9 @@
+The code:
+Use class toggling
+Get rid of code duplication
+Move themes into one file, so that theme change doesn't need to make a dedicated request
+Add list persistence (so it at least doesn't get lost on page refresh)
+
+The design:
+Implement drag and drop (or another way of manipulating order)
+Maybe make the input field activation area bigger

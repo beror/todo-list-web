@@ -29,13 +29,13 @@
   cursor: pointer;
 }
 
-.listHeader input {
+#todoInput {
   font-family: 'Josefin Sans', sans-serif;
   border: 0;
   width: 90%;
 }
 
-.listHeader input:focus {
+#todoInput:focus {
   outline: 0;
 }
 
@@ -111,6 +111,10 @@ li:last-child {
 @media only screen and (max-width: 570px) {
   .listHeader {
     width: 95%;
+  }
+
+  #todoInput {
+    width: 80%;
   }
 
   ul {

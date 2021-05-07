@@ -40,6 +40,8 @@ function showAllListItems() {
     .map(todo => {
       let todoHTMLElement = document.createElement("LI");
       todoHTMLElement.setAttribute("onclick", "changeMarker(this)");
+      todoHTMLElement.setAttribute("onMouseOver", "highlightListItem(this)");
+      todoHTMLElement.setAttribute("onMouseOut", "unhighlightListItem(this)");
       if(todo.isTicked) {
         todoHTMLElement.innerHTML = '<span class="listMarkerTicked"></span>' + todo.text;
       } else {
@@ -61,6 +63,8 @@ function showActive() {
     .map(activeTodo => {
       let todoHTMLElement = document.createElement("LI");
       todoHTMLElement.setAttribute("onclick", "changeMarker(this)");
+      todoHTMLElement.setAttribute("onMouseOver", "highlightListItem(this)");
+      todoHTMLElement.setAttribute("onMouseOut", "unhighlightListItem(this)");
       todoHTMLElement.innerHTML = '<span class="listMarkerNotTicked"></span>' + activeTodo.text;
 
       return todoHTMLElement;
@@ -78,6 +82,8 @@ function showCompleted() {
     .map(completedTodo => {
       let todoHTMLElement = document.createElement("LI");
       todoHTMLElement.setAttribute("onclick", "changeMarker(this)");
+      todoHTMLElement.setAttribute("onMouseOver", "highlightListItem(this)");
+      todoHTMLElement.setAttribute("onMouseOut", "unhighlightListItem(this)");
       todoHTMLElement.innerHTML = '<span class="listMarkerTicked"></span>' + completedTodo.text;
 
       return todoHTMLElement;
@@ -133,7 +139,7 @@ function addCrossToListItem(liElement) {
 
   let cross = document.createElement("IMG");
   cross.src = "images/icon-cross.svg";
-  cross.setAttribute("onClick", "deleteTodo(this)");
+  cross.setAttribute("onClick", "deleteTodo(this.parentElement)");
   cross.classList.add("cross");
 
   liElement.appendChild(cross);
